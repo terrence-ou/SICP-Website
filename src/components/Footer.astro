@@ -1,0 +1,41 @@
+---
+const year = new Date().getFullYear();
+import { menuLinks } from "../site.config";
+---
+
+<footer
+  class="flex justify-between text-sm font-bold text-zinc-500 tracking-wide pt-20 pb-4"
+>
+  <span>
+    Tingsong Ou {year}. SICP-JS Solutions
+  </span>
+  <span>
+    <a
+      >{
+        menuLinks.map((link, index) => {
+          const padding =
+            index === 0
+              ? "pr-3"
+              : index === menuLinks.length - 1
+                ? "pl-3"
+                : "px-3";
+          const border = index !== menuLinks.length - 1 ? "border-r" : "";
+          return (
+            <a
+              class={
+                "inline-flex text-center hover:underline hover:text-zinc-700" +
+                " " +
+                padding +
+                " " +
+                border
+              }
+              href={link.path}
+            >
+              {link.title}
+            </a>
+          );
+        })
+      }</a
+    >
+  </span>
+</footer>

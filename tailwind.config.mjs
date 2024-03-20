@@ -10,6 +10,9 @@ export default {
         sans: [...fontFamily.sans],
         serif: [...fontFamily.serif],
       },
+      colors: {
+        "dark-sky": "#075985",
+      },
     },
   },
   plugins: [],
