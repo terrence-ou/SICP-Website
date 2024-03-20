@@ -4,11 +4,11 @@ export const menuLinks: Array<{ title: string; path: string }> = [
     path: "/",
   },
   {
-    title: "Info",
-    path: "/info/",
-  },
-  {
     title: "Contents",
     path: "/contents/",
+  },
+  {
+    title: "Info",
+    path: "/info/",
   },
 ];

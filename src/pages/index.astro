@@ -3,5 +3,50 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h1>Index page</h1>
+  <div class="flex flex-col gap-10 text-sm">
+    <section>
+      <h1>Welcome SICP-JS Readers!</h1>
+      <p>
+        The <strong>SICP-JS</strong> stands for the book <em
+          >Structure and Interpretation of Computer Programs, JavaScript Edition</em
+        >, writen by Harold Abelson and Gerald Jay Sussman, adapted to
+        JavaScript by Martin Henz and Tobias Wrigstad with Julie Sussman
+      </p>
+    </section>
+
+    <section>
+      <h1>About Me</h1>
+      <p>
+        My name is Terrence (Tingsong) Ou, where Tingsong is my legal name. I
+        born and grew up in China and relocate to the United States at my age of
+        28. I was a previous Architect but found Computer Science very
+        attractive at 31, particularily Frontend Development and Machine
+        Learning. Therefore I'm a starter of CS learning every bits from
+        scratch.
+      </p>
+      <h3>Find me on:</h3>
+      <table>
+        <tbody>
+          <tr><th scope="row">Github:</th><td>hyperlink</td></tr>
+          <tr><th scope="row">LinkedIn:</th><td>hyperlink</td></tr>
+          <tr><th scope="row">X (Twitter):</th><td>hyperlink</td></tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
 </BaseLayout>
+
+<style>
+  h1 {
+    @apply text-xl font-bold my-2 tracking-wide;
+  }
+  h3 {
+    @apply text-lg font-bold mb-2;
+  }
+  p {
+    @apply my-4;
+  }
+  th {
+    @apply text-left w-32 py-0.5 font-normal;
+  }
+</style>
