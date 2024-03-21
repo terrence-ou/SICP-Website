@@ -4,16 +4,17 @@ import logo from "../images/logo.png";
 // const url = new URL(Astro.request.url);
 ---
 
-<header id="main-header" class="flex items-center justify-between mb-24">
+<header id="main-header" class="flex items-center justify-between mb-20">
   <div class="flex group">
     <div class="flex gap-5 items-center">
       <img
         src={logo.src}
+        alt="SICP lambda icon"
         class="h-[4.5rem] opacity-50 duration-100 group-hover:opacity-90"
       />
       <div class="flex flex-col gap-1">
-        <h1 class="text-2xl font-bold">SICP-JS Solutions</h1>
-        <nav id="nav-menu" class="text-dark-sky">
+        <h1 class="text-2xl font-bold">SICP-JS Exercises</h1>
+        <nav id="nav-menu">
           {
             menuLinks.map((link, index) => {
               const padding =

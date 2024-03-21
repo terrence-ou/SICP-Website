@@ -1,5 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import sicpCover from "../images/sicp.png";
+import sicpJSCover from "../images/sicpjs.png";
 ---
 
 <BaseLayout>
@@ -12,41 +15,67 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         >, writen by Harold Abelson and Gerald Jay Sussman, adapted to
         JavaScript by Martin Henz and Tobias Wrigstad with Julie Sussman
       </p>
-    </section>
-
-    <section>
-      <h1>About Me</h1>
-      <p>
-        My name is Terrence (Tingsong) Ou, where Tingsong is my legal name. I
-        born and grew up in China and relocate to the United States at my age of
-        28. I was a previous Architect but found Computer Science very
-        attractive at 31, particularily Frontend Development and Machine
-        Learning. Therefore I'm a starter of CS learning every bits from
-        scratch.
-      </p>
-      <h3>Find me on:</h3>
-      <table>
-        <tbody>
-          <tr><th scope="row">Github:</th><td>hyperlink</td></tr>
-          <tr><th scope="row">LinkedIn:</th><td>hyperlink</td></tr>
-          <tr><th scope="row">X (Twitter):</th><td>hyperlink</td></tr>
-        </tbody>
-      </table>
+      <div class="flex gap-16 justify-center my-10 px-10">
+        <figure>
+          <img src={sicpJSCover.src} alt="sicp js book cover" />
+          <figcaption>
+            SICP JavaScript Version (2022) <a>[Amazon]</a><a>[MIT Press]</a>
+          </figcaption>
+        </figure>
+        <figure>
+          <img src={sicpCover.src} alt="sicp book cover" />
+          <figcaption>
+            SICP Original Version (1996 2nd ed.) <a>[Amazon]</a><a
+              >[MIT Press]</a
+            >
+          </figcaption>
+        </figure>
+      </div>
     </section>
   </div>
+
+  <section>
+    <h1>About Me</h1>
+    <p>
+      My name is Terrence (Tingsong) Ou, where Tingsong is my legal name. I born
+      and grew up in China and relocate to the United States at my age of 28. I
+      was a previous Architect but found Computer Science very attractive at 31,
+      particularily Frontend Development and Machine Learning. Therefore I'm a
+      starter of CS learning every bits from scratch.
+    </p>
+
+    <h3>Find me on:</h3>
+    <table>
+      <tbody>
+        <tr><th scope="row">Github:</th><td>hyperlink</td></tr>
+        <tr><th scope="row">LinkedIn:</th><td>hyperlink</td></tr>
+        <tr><th scope="row">X (Twitter):</th><td>hyperlink</td></tr>
+      </tbody>
+    </table>
+  </section>
 </BaseLayout>
 
 <style>
   h1 {
-    @apply text-xl font-bold my-2 tracking-wide;
+    @apply my-2 tracking-wide;
   }
   h3 {
-    @apply text-lg font-bold mb-2;
+    @apply mb-2;
   }
-  p {
-    @apply my-4;
-  }
+
   th {
     @apply text-left w-32 py-0.5 font-normal;
+  }
+
+  tr {
+    @apply text-sm;
+  }
+
+  figcaption {
+    @apply text-center mt-3.5;
+  }
+
+  img {
+    @apply grayscale-[65%] opacity-70 duration-100 rounded-md hover:grayscale-0 hover:opacity-100 hover:rounded-none;
   }
 </style>

@@ -11,7 +11,7 @@ export default {
         serif: [...fontFamily.serif],
       },
       colors: {
-        "dark-sky": "#075985",
+        "dark-sky": "#0891b2",
       },
     },
   },

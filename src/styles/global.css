@@ -17,4 +17,21 @@
     padding-top: 3rem;
     margin: 0 auto;
   }
+  
+  h1 {
+    @apply text-xl font-bold;
+  }
+
+  h3 {
+    @apply text-lg font-bold;
+  }
+
+  p {
+    @apply my-4 text-sm;
+  }
+
+  a {
+    @apply text-dark-sky cursor-pointer hover:underline;
+  }
 }
+
