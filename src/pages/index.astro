@@ -11,7 +11,7 @@ import twitterIcon from "../images/twitter_logo.png";
 ---
 
 <BaseLayout>
-  <div class="flex flex-col gap-10 text-sm">
+  <div class="flex flex-col gap-6">
     <section>
       <h1>Welcome SICP-JS Readers!</h1>
       <p>
@@ -24,7 +24,7 @@ import twitterIcon from "../images/twitter_logo.png";
         <figure>
           <img src={sicpJSCover.src} alt="sicp js book cover" />
           <figcaption>
-            SICP JavaScript Version (2022) <a
+            SICP JavaScript Version (2022) <br /><a
               href={bookLinks.sicpjs.amazon}
               target="_blank">[Amazon]</a
             ><a href={bookLinks.sicpjs.mit} target="_blank">[MIT Press]</a>
@@ -33,7 +33,7 @@ import twitterIcon from "../images/twitter_logo.png";
         <figure>
           <img src={sicpCover.src} alt="sicp book cover" />
           <figcaption>
-            SICP Original Version (1996 2nd ed.) <a
+            SICP Original Version (1996 2nd ed.) <br /><a
               href={bookLinks.sicp.amazon}
               target="_blank">[Amazon]</a
             >
@@ -42,59 +42,61 @@ import twitterIcon from "../images/twitter_logo.png";
         </figure>
       </div>
     </section>
+
+    <section>
+      <h1>About Me</h1>
+      <p>
+        My name is Terrence (Tingsong) Ou, where Tingsong is my legal name. I
+        born and grew up in China and relocate to the United States at my age of
+        28. I was a previous Architect but found Computer Science very
+        attractive at 31, particularily Frontend Development and Machine
+        Learning. Therefore I'm a starter of CS learning every bits from
+        scratch.
+      </p>
+
+      <h3 class="mt-8">Find me on:</h3>
+      <table>
+        <tbody>
+          <tr>
+            <th scope="row">Github:</th>
+            <td>
+              <img src={githubIcon.src} class="link-icon" />
+              <a href="https://github.com/terrence-ou" target="_blank"
+                >https://github.com/terrence-ou
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">LinkedIn:</th>
+            <td>
+              <img src={linkedinIcon.src} class="link-icon" />
+              <a
+                href="https://www.linkedin.com/in/tingsong-ou-231931196/"
+                target="_blank"
+                >https://www.linkedin.com/in/tingsong-ou-231931196/
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">X (Twitter):</th>
+            <td>
+              <img src={twitterIcon.src} class="link-icon" />
+              <a href="https://twitter.com/ou_terrenceu" target="_blank"
+                >https://twitter.com/ou_terrence
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
   </div>
-
-  <section>
-    <h1>About Me</h1>
-    <p>
-      My name is Terrence (Tingsong) Ou, where Tingsong is my legal name. I born
-      and grew up in China and relocate to the United States at my age of 28. I
-      was a previous Architect but found Computer Science very attractive at 31,
-      particularily Frontend Development and Machine Learning. Therefore I'm a
-      starter of CS learning every bits from scratch.
-    </p>
-
-    <h3>Find me on:</h3>
-    <table>
-      <tbody>
-        <tr>
-          <th scope="row">Github:</th>
-          <td>
-            <img src={githubIcon.src} class="link-icon" />
-            <a href="https://github.com/terrence-ou" target="_blank"
-              >https://github.com/terrence-ou
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">LinkedIn:</th>
-          <td>
-            <img src={linkedinIcon.src} class="link-icon" />
-            <a
-              href="https://www.linkedin.com/in/tingsong-ou-231931196/"
-              target="_blank"
-              >https://www.linkedin.com/in/tingsong-ou-231931196/
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <th scope="row">X (Twitter):</th>
-          <td>
-            <img src={twitterIcon.src} class="link-icon" />
-            <a href="https://twitter.com/ou_terrenceu" target="_blank"
-              >https://twitter.com/ou_terrence
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
 </BaseLayout>
 
 <style>
-  h1 {
-    @apply my-2 tracking-wide;
+  em {
+    @apply font-medium text-red-500 underline decoration-wavy decoration-1;
   }
+
   h3 {
     @apply mb-2;
   }
@@ -104,7 +106,7 @@ import twitterIcon from "../images/twitter_logo.png";
   }
 
   tr {
-    @apply text-sm;
+    @apply text-sm h-7 flex items-center;
   }
 
   td {
@@ -116,7 +118,7 @@ import twitterIcon from "../images/twitter_logo.png";
   }
 
   figcaption {
-    @apply text-center mt-3.5;
+    @apply text-center mt-3.5 text-sm leading-5;
   }
 
   img {
@@ -124,6 +126,6 @@ import twitterIcon from "../images/twitter_logo.png";
   }
 
   .link-icon {
-    @apply h-5;
+    @apply h-5 opacity-100;
   }
 </style>

@@ -1,8 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
+
+  :root {
+    font-family: "Roboto Mono", monospace;
+    /* font-family: monospace; */
+  }
 
   html {
     scroll-behavior: smooth;
@@ -19,11 +28,19 @@
   }
   
   h1 {
-    @apply text-xl font-bold;
+    @apply text-xl font-bold my-2 tracking-wide;
+  }
+
+  h2 {
+    @apply text-lg font-bold;
   }
 
   h3 {
     @apply text-lg font-bold;
+  }
+
+  h4 {
+    @apply text-base font-semibold my-2;
   }
 
   p {
@@ -33,5 +50,17 @@
   a {
     @apply text-dark-sky cursor-pointer hover:underline;
   }
+
+  li p:first-child{
+    @apply before:content-["#"]
+  }
+}
+
+.katex {
+  @apply text-base my-6;
+}
+
+hr {
+  @apply my-5 border-dashed border;
 }
 

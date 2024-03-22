@@ -1,0 +1,21 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const { frontmatter } = Astro.props;
+const { chapter, section, title } = frontmatter;
+---
+
+<BaseLayout>
+  <h1>Chapter {chapter}.{section} {title}</h1>
+  <div class="overview">This part includes exercise 1.9 - 1.28</div>
+  <slot />
+</BaseLayout>
+
+<style>
+  h1 {
+    @apply mb-5;
+  }
+
+  .overview {
+    @apply text-center py-5 my-8 text-zinc-600 border border-dashed border-zinc-500 bg-zinc-100 text-sm;
+  }
+</style>
