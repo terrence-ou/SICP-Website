@@ -5,7 +5,7 @@ export const menuLinks: Array<{ title: string; path: string }> = [
   },
   {
     title: "Contents",
-    path: "/contents/",
+    path: "/contents/1-1",
   },
   {
     title: "Info",
