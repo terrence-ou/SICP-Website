@@ -1,18 +1,29 @@
 ---
 import BaseLayout from "./BaseLayout.astro";
+import Contents from "../components/Contents.astro";
 const { frontmatter } = Astro.props;
-const { chapter, section, title } = frontmatter;
+const { chapter, section, chapterTitle, sectionTitle } = frontmatter;
 ---
 
 <BaseLayout>
-  <h1>Chapter {chapter}.{section} {title}</h1>
-  <div class="overview">This part includes exercise 1.9 - 1.28</div>
-  <slot />
+  <div class="flex gap-12">
+    <div class="basis-3/4">
+      <h1>Chapter {chapter} - {chapterTitle}</h1>
+      <h2>{chapter}.{section} {sectionTitle}</h2>
+      <div class="overview">This part includes exercise 1.9 - 1.28</div>
+      <slot />
+    </div>
+    <Contents />
+  </div>
 </BaseLayout>
 
 <style>
   h1 {
-    @apply mb-5;
+    @apply mb-6;
+  }
+
+  h2 {
+    @apply font-medium;
   }
 
   .overview {

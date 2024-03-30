@@ -1,0 +1,43 @@
+---
+const posts = await Astro.glob("../pages/contents/*.md");
+interface organizedPostsType {
+  [key: string]: { title: string; posts: (typeof posts)[0][] };
+}
+const organizedPosts: organizedPostsType = {};
+posts.forEach((post) => {
+  if (!organizedPosts[post.frontmatter.chapter]) {
+    organizedPosts[post.frontmatter.chapter] = {
+      title: `${post.frontmatter.chapter} ${post.frontmatter.chapterTitle}`,
+      posts: [post],
+    };
+  } else {
+    organizedPosts[post.frontmatter.chapter].posts.push(post);
+  }
+});
+---
+
+<div class="relative basis-1/4 overflow-visible text-sm">
+  <div
+    id="contents-list"
+    class="flex flex-col tracking-tighter fixed opacity-50 hover:opacity-100 duration-100"
+  >
+    {
+      Object.values(organizedPosts).map((postObject) => {
+        return (
+          <>
+            <h4>{postObject.title}</h4>
+            {postObject.posts.map((post) => {
+              return (
+                <a href={post.url}>
+                  {post.frontmatter.chapter}.{post.frontmatter.section}{" "}
+                  {post.frontmatter.sectionTitle}
+                </a>
+              );
+            })}
+          </>
+        );
+      })
+    }
+    <div></div>
+  </div>
+</div>
