@@ -29,7 +29,7 @@
   }
   
   h1 {
-    @apply text-xl font-bold my-2 tracking-wide;
+    @apply text-xl font-extrabold my-2 tracking-normal;
   }
 
   h2 {
