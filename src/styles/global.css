@@ -10,7 +10,6 @@
 
   :root {
     font-family: "Roboto Mono", monospace;
-    /* font-family: monospace; */
   }
 
   html {
@@ -18,14 +17,7 @@
   }
 
   body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 960px;
-    padding: 0 3rem;
-    padding-top: 3rem;
-    margin: 0 auto;
+    @apply flex flex-col justify-between min-h-dvh max-w-[960px] pt-12 px-12 mx-auto dark:bg-black;
   }
   
   h1 {
@@ -64,4 +56,3 @@
 hr {
   @apply my-5 border-dashed border;
 }
-
