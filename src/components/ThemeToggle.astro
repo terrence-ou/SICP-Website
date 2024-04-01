@@ -1,0 +1,33 @@
+---
+
+---
+
+<div class="flex">
+  <button
+    id="btn-theme-toggle"
+    class="p-1 rounded-md duration-150 outline outline-zinc-500/0 hover:outline-zinc-500"
+  >
+  </button>
+</div>
+
+<script>
+  import { moonIcon, sunIcon } from "../images/svg_icons";
+
+  const defaultTheme = window.matchMedia("(prefers-color-scheme: light)")
+    .matches
+    ? "light"
+    : "dark";
+  const root = document.documentElement;
+  root.setAttribute("data-theme", defaultTheme);
+  const button = document.querySelector("#btn-theme-toggle");
+  button!.innerHTML = defaultTheme === "light" ? sunIcon : moonIcon;
+
+  const switchTheme = () => {
+    const root = document.documentElement;
+    const currTheme = root.getAttribute("data-theme");
+    root.setAttribute("data-theme", currTheme === "light" ? "dark" : "light");
+    button!.innerHTML =
+      root.getAttribute("data-theme") === "light" ? sunIcon : moonIcon;
+  };
+  button?.addEventListener("click", switchTheme);
+</script>
