@@ -13,21 +13,31 @@
 <script>
   import { moonIcon, sunIcon } from "../images/svg_icons";
 
-  const defaultTheme = window.matchMedia("(prefers-color-scheme: light)")
-    .matches
-    ? "light"
-    : "dark";
-  const root = document.documentElement;
-  root.setAttribute("data-theme", defaultTheme);
+  const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
   const button = document.querySelector("#btn-theme-toggle");
-  button!.innerHTML = defaultTheme === "light" ? sunIcon : moonIcon;
+  const root = document.documentElement;
 
-  const switchTheme = () => {
-    const root = document.documentElement;
-    const currTheme = root.getAttribute("data-theme");
-    root.setAttribute("data-theme", currTheme === "light" ? "dark" : "light");
-    button!.innerHTML =
-      root.getAttribute("data-theme") === "light" ? sunIcon : moonIcon;
+  const getUserPref = () => {
+    const storedTheme = localStorage.getItem("sicp-theme");
+    return storedTheme || (lightModePref.matches ? "light" : "dark");
   };
-  button?.addEventListener("click", switchTheme);
+
+  const setTheme = (newTheme: string) => {
+    if (newTheme === root.getAttribute("data-theme")) return;
+    root.setAttribute("data-theme", newTheme);
+    button!.innerHTML = newTheme === "light" ? sunIcon : moonIcon;
+    localStorage.setItem("sicp-theme", newTheme);
+  };
+
+  setTheme(getUserPref());
+
+  button?.addEventListener("click", () => {
+    root.getAttribute("data-theme") === "light"
+      ? setTheme("dark")
+      : setTheme("light");
+  });
+
+  lightModePref.addEventListener("change", (e) =>
+    setTheme(e.matches ? "light" : "dark")
+  );
 </script>

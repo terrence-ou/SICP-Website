@@ -9,6 +9,8 @@ export default {
     extend: {
       colors: {
         "dark-sky": "#0891b2",
+        bgColor: "hsl(var(--theme-bg) / <alpha-value>)",
+        textColor: "hsl(var(--theme-text) / <alpha-value>)",
       },
     },
   },
