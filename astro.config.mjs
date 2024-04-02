@@ -26,19 +26,13 @@ export default defineConfig({
         // return default selector
         return `[data-theme="${theme.name}"]`;
       },
+      useThemedScrollbars: false,
     }),
   ],
   markdown: {
     shikiConfig: {
       // Alternatively, provide multiple themes
       // https://shiki.style/guide/dual-themes
-      // themes: {
-      //   light: "github-light",
-      //   dark: "dracula",
-      // },
-      // defaultColor: "light",
-      // cssVariablePrefix: "--shiki--",
-      // Add custom languages
       // Note: Shiki has countless langs built-in, including .astro!
       // https://shiki.style/languages
       langs: [],
@@ -48,7 +42,7 @@ export default defineConfig({
       // Find common transformers: https://shiki.style/packages/transformers
       transformers: [],
     },
-    remarkPlugins: [remarkMath], // relevant
-    rehypePlugins: [rehypeKatex], // relevant
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [[rehypeKatex, { strict: false }]],
   },
 });

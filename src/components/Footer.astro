@@ -19,7 +19,8 @@ import { menuLinks } from "../site.config";
               : index === menuLinks.length - 1
                 ? "pl-3"
                 : "px-3";
-          const border = index !== menuLinks.length - 1 ? "border-r" : "";
+          const border =
+            index !== menuLinks.length - 1 ? "border-r border-zinc-500" : "";
           return (
             <a
               class={
