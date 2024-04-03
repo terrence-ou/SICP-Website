@@ -53,6 +53,10 @@
     @apply my-4 text-sm;
   }
 
+  p img {
+    @apply rounded-md;
+  }
+
   a {
     @apply text-dark-sky cursor-pointer hover:underline;
   }

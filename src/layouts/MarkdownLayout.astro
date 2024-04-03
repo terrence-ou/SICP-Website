@@ -2,7 +2,7 @@
 import BaseLayout from "./BaseLayout.astro";
 import Contents from "../components/Contents.astro";
 const { frontmatter } = Astro.props;
-const { chapter, section, chapterTitle, sectionTitle } = frontmatter;
+const { chapter, section, chapterTitle, sectionTitle, range } = frontmatter;
 ---
 
 <BaseLayout>
@@ -10,7 +10,7 @@ const { chapter, section, chapterTitle, sectionTitle } = frontmatter;
     <div class="basis-3/4">
       <h1>Chapter {chapter} - {chapterTitle}</h1>
       <h2>{chapter}.{section} {sectionTitle}</h2>
-      <div class="overview">This part includes exercise 1.9 - 1.28</div>
+      <div class="overview">This part includes exercise {range}</div>
       <slot />
     </div>
     <Contents />
