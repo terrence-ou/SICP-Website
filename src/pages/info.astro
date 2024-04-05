@@ -3,5 +3,92 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <h1>Intro page</h1>
+  <div id="infopage" class="flex flex-col gap-8">
+    <section class="flex flex-col gap-4">
+      <h1>Website Tech Stack</h1>
+      <div>
+        <h3><i>-- Astro --</i></h3>
+        <p>
+          The whole website is built with Astro and vanilla TypeScript without
+          incorporating other UI libraries. I personally like the content-first
+          concept under the hood of Astro, which makes organizing and rendering
+          markdown files extremely convenient.
+        </p>
+        <p>
+          Please refer to <a href="https://astro.build/">https://astro.build/</a
+          > for documentation and examples of Astro.
+        </p>
+
+        <h3><i>-- Website Template: Astro Cactus --</i></h3>
+        <p>
+          This website will look really awful without Chris Williams's Astro
+          Cactus theme: <a
+            href="https://github.com/chrismwilliams/astro-theme-cactus"
+            >https://github.com/chrismwilliams/astro-theme-cactus</a
+          >. This theme is perfect for blogs, tutorials, or personal websites
+          thanks to its perfect layout and minimal design, which makes the
+          content visual-centric to maximize the readability of posts.
+        </p>
+
+        <h3><i>-- TailwindCSS --</i></h3>
+        <p>
+          I use TailwindCSS to style the website. The library provides an inline
+          method to style components, which allows me to focus more on the
+          contents themselves without being distracted by organizing .css files.
+        </p>
+        <p>
+          Please refer to <a href="https://tailwindcss.com/"
+            >https://tailwindcss.com/</a
+          > for more details about the popular inline-styling library.
+        </p>
+        <h3><i>-- Expressive Code --</i></h3>
+        <p>
+          Expressive Code makes rendering my exercise solution codes very easy
+          and increases my posts' readability, especially when using its
+          built-in dark/light themes. The themes I used on this website are
+          "vitesse-dark" and "github-light".
+        </p>
+        <p>
+          Please refer to <a href="https://expressive-code.com/installation/"
+            >https://expressive-code.com/</a
+          > for the installation and configuration guides.
+        </p>
+        <h3><i>-- rehype-katax/remark-math --</i></h3>
+        <p>
+          Using KaTeX and MathJax makes rendering math expressions on this
+          website possible. For the details of configuring rehype katax and
+          remark math on Astro, please follow the steps on Alexa's Dev Blog: <a
+            href="https://blog.alexafazio.dev/blog/render-latex-in-astro/"
+            >https://blog.alexafazio.dev/blog/render-latex-in-astro/</a
+          >.
+        </p>
+
+        <h3><i>-- Github Pages --</i></h3>
+        <p>
+          The website is hosted on Github Pages with a very minimal Github
+          Action configuration. Astro provides very clear guidance for deploying
+          the Astro Site to Github Pagess: <a
+            href="https://docs.astro.build/en/guides/deploy/github/"
+            >https://docs.astro.build/en/guides/deploy/github/</a
+          >.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h1>Copywrite and Disclaimer</h1>
+      <p>
+        This project is purely driven by personal interests; it is not and will
+        never serve any commercial purpose. If you find any content on this
+        website that violates or potentially violates the copyright law, please
+        get in touch with me, and I will make proper adjustments to protect the
+        original work's copyright.
+      </p>
+      <p>
+        For the exercise solutions, as the project uses an MIT License, everyone
+        is free to use ode, explanation, and math equations here if they are
+        helpful.
+      </p>
+    </section>
+  </div>
 </BaseLayout>
