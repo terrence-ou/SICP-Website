@@ -1,7 +1,6 @@
 import { defineConfig } from "astro/config";
 import astroExpressiveCode from "astro-expressive-code";
 import tailwind from "@astrojs/tailwind";
-// import mdx from "@astrojs/mdx";
 import rehypeKatex from "rehype-katex"; // relevant
 import remarkMath from "remark-math"; // relevant
 
@@ -31,15 +30,8 @@ export default defineConfig({
   ],
   markdown: {
     shikiConfig: {
-      // Alternatively, provide multiple themes
-      // https://shiki.style/guide/dual-themes
-      // Note: Shiki has countless langs built-in, including .astro!
-      // https://shiki.style/languages
       langs: [],
-      // Enable word wrap to prevent horizontal scrolling
       wrap: true,
-      // Add custom transformers: https://shiki.style/guide/transformers
-      // Find common transformers: https://shiki.style/packages/transformers
       transformers: [],
     },
     remarkPlugins: [remarkMath],
