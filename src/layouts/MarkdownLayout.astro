@@ -6,8 +6,8 @@ const { chapter, section, chapterTitle, sectionTitle, range } = frontmatter;
 ---
 
 <BaseLayout>
-  <div class="flex gap-12">
-    <div class="basis-3/4">
+  <div class="grid grid-cols-4 gap-8">
+    <div class="col-span-3">
       <h1>Chapter {chapter} - {chapterTitle}</h1>
       <h2>{chapter}.{section} {sectionTitle}</h2>
       <div class="overview">This part includes exercise {range}</div>

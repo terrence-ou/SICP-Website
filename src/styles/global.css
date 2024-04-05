@@ -54,7 +54,7 @@
   }
 
   p img {
-    @apply rounded-md;
+    @apply rounded-md w-[90%] mx-auto;
   }
 
   a {
