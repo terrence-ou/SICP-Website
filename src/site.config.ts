@@ -1,15 +1,15 @@
 export const menuLinks: Array<{ title: string; path: string }> = [
   {
     title: "Home",
-    path: "/",
+    path: "/SICP-Website/",
   },
   {
     title: "Contents",
-    path: "/contents/1-1",
+    path: "/SICP-Website/contents/1-1",
   },
   {
     title: "Info",
-    path: "/info/",
+    path: "/SICP-Website/info/",
   },
 ];
 

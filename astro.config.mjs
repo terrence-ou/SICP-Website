@@ -6,6 +6,8 @@ import remarkMath from "remark-math"; // relevant
 
 // https://astro.build/config
 export default defineConfig({
+  size: "https://terrence-ou.github.io",
+  base: "/SICP-Website",
   integrations: [
     // mdx(),
     tailwind(),
