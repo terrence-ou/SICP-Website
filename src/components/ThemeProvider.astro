@@ -1,0 +1,21 @@
+<script is:inline>
+  const lightModePref = window.matchMedia("(prefers-color-scheme: light)");
+  const root = document.documentElement;
+
+  const getUserPref = () => {
+    const storedTheme = localStorage.getItem("sicp-theme");
+    return storedTheme || (lightModePref.matches ? "light" : "dark");
+  };
+
+  const setTheme = (newTheme) => {
+    if (newTheme === root.getAttribute("data-theme")) return;
+    root.setAttribute("data-theme", newTheme);
+    localStorage.setItem("sicp-theme", newTheme);
+  };
+
+  setTheme(getUserPref());
+
+  lightModePref.addEventListener("change", (e) =>
+    setTheme(e.matches ? "light" : "dark")
+  );
+</script>
