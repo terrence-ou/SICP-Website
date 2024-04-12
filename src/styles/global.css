@@ -57,6 +57,10 @@
     @apply rounded-md w-[90%] mx-auto;
   }
 
+  p code {
+    @apply bg-zinc-200 dark:bg-zinc-700
+  }
+
   a {
     @apply text-dark-sky cursor-pointer hover:underline;
   }
