@@ -13,7 +13,7 @@ const { chapter, section, chapterTitle, sectionTitle, range } = frontmatter;
       <div class="overview">This part includes exercise {range}</div>
       <slot />
     </div>
-    <Contents />
+    <Contents range={range} currChapter={chapter} />
   </div>
 </BaseLayout>
 

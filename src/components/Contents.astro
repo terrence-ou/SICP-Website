@@ -1,9 +1,21 @@
 ---
-const posts = await Astro.glob("../pages/contents/*.md");
+import { getSections } from "../utils/toc";
+
+interface Props {
+  range: string;
+  currChapter: string;
+}
+
 interface organizedPostsType {
   [key: string]: { title: string; posts: (typeof posts)[0][] };
 }
+
+const posts = await Astro.glob("../pages/contents/*.md");
+const { range, currChapter } = Astro.props; // Get the range of exercises in the pose
 const organizedPosts: organizedPostsType = {};
+
+const sections = getSections(range);
+
 posts.forEach((post) => {
   if (!organizedPosts[post.frontmatter.chapter]) {
     organizedPosts[post.frontmatter.chapter] = {
@@ -38,6 +50,21 @@ posts.forEach((post) => {
         );
       })
     }
-    <div></div>
+    <div>
+      <ul class="mt-10 w-[80%] grid grid-cols-6 gap-2">
+        {
+          sections.map((index) => {
+            return (
+              <li class="w-11 rounded-md text-center bg-dark-sky/60 hover:bg-dark-sky">
+                <a
+                  class="text-white hover:no-underline"
+                  href={`#exercise-${currChapter}${index}`}
+                >{`${currChapter}.${index}`}</a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </div>
   </div>
 </div>
