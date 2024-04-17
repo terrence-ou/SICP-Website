@@ -3,6 +3,7 @@ import astroExpressiveCode from "astro-expressive-code";
 import tailwind from "@astrojs/tailwind";
 import rehypeKatex from "rehype-katex"; // relevant
 import remarkMath from "remark-math"; // relevant
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,6 +29,10 @@ export default defineConfig({
         return `[data-theme="${theme.name}"]`;
       },
       useThemedScrollbars: false,
+      plugins: [pluginLineNumbers()],
+      defaultProps: {
+        showLineNumbers: false,
+      },
     }),
   ],
   markdown: {
